@@ -1,0 +1,65 @@
+<h3 style="text-align: center;">Add Flight</h3>
+<div [hidden]="submitted" style="width: 400px; margin-left: auto; margin-right: auto;">
+  <form (ngSubmit)="onSubmit()">
+    <!--<div class="form-group">
+      <label for="name">Flight Number</label>
+      <input type="text" class="form-control" id="flightNo" required [(ngModel)]="flight.flightNo" name="flightNo">
+    </div>-->
+    <div class="form-group">
+      <label for="name">Flight Number</label>
+      <input type="text" placeholder="Flight Number" pattern="^\d{5}$" #flightNo="ngModel" [class.is-invalid]="flightNo.invalid && flightNo.touched" class="form-control" id="flightNo" required [(ngModel)]="flight.flightNo" name="flightNo">
+    </div>
+
+    <div class="form-group">
+      <label for="name">From Place</label>
+      <input type="text" placeholder="From Place" pattern="^\d{5}$" #fromPlace="ngModel" class="form-control" id="fromPlace" required [(ngModel)]="flight.fromPlace" name="fromPlace">
+     </div>
+    <div class="form-group">
+      <label for="name">To Place</label>
+      <input type="text" placeholder="To Place" pattern="^\d{5}$" #tolace="ngModel" class="form-control" id="toPlace" required [(ngModel)]="flight.toPlace" name="toPlace">
+    </div>
+    <div class="form-group">
+      <label for="name">Start Date</label>
+      <input type="text" placeholder="Start Date" pattern="^\d{5}$" #startDate="ngModel"  class="form-control" id="startDate" required [(ngModel)]="flight.startDate" name="startDate">
+    </div>
+    <div class="form-group">
+      <label for="name">Start Time</label>
+      <input type="text" placeholder="Start Time" pattern="^\d{5}$" #startTime="ngModel"  class="form-control" id="startTime" required [(ngModel)]="flight.startTime" name="startTime">
+    </div>
+    <div class="form-group">
+      <label for="name">End Date</label>
+      <input type="text" placeholder="End Date" pattern="^\d{5}$" #endDate="ngModel" class="form-control" id="endDate" required [(ngModel)]="flight.endDate" name="endDate">
+    </div>
+    <div class="form-group">
+      <label for="name">End Time</label>
+      <input type="text" placeholder="End Time" #carrierName="ngModel"  class="form-control" id="endTime" required [(ngModel)]="flight.endTime" name="endTime">
+    </div>
+    <div class="form-group">
+      <label for="name">Airline Id</label>
+      <input type="text" placeholder="Airline Id" #carrierName="ngModel"  class="form-control" id="airlineId" required [(ngModel)]="airline.id" name="airlineId">
+    </div>
+    <div class="form-group">
+      <label for="name">Seat Number</label>
+      <input type="text" placeholder="Seat Number" #carrierName="ngModel"  class="form-control" id="seatNo" required [(ngModel)]="seat.seatNo" name="seatNo">
+    </div>
+    <div class="form-group">
+      <label for="name">Seat Type</label>
+      <input type="text" placeholder="Seat Type" #carrierName="ngModel"  class="form-control" id="seatType" required [(ngModel)]="seat.seatType" name="seatType">
+    </div>
+    <div class="form-group">
+      <label for="name">Cost</label>
+      <input type="text" placeholder="cost" #carrierName="ngModel"  class="form-control" id="cost" required [(ngModel)]="seat.cost" name="cost">
+    </div>
+    <div class="form-group">
+      <label for="name">Status</label>
+      <input type="text" placeholder="Status" #carrierName="ngModel"  class="form-control" id="status" required [(ngModel)]="seat.status" name="status">
+    </div>
+    
+    <button type="submit" class="btn btn-success" (click)="onSubmit()">Submit</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+  <!--<button class="btn btn-success" (click)="newFlight()">Add</button>-->
+</div>
